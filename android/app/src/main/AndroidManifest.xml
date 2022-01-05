@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.digitRecognizer.digit_recognizer_flutter">
    <application
-        android:label="digit_recognizer_flutter"
+        android:label="Digit Recognizer"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
