@@ -24,6 +24,21 @@ class Recognizer {
     );
   }
 
+  dispose() {
+    Tflite.close();
+  }
+
+  Future<Uint8List?> previewImage({required List<Offset?> points}) async {
+    final picture = _pointsToPicture(points: points);
+    final image = await picture.toImage(
+      Constants.mnistImageSize,
+      Constants.mnistImageSize,
+    );
+    var pngBytes = await image.toByteData(format: ImageByteFormat.png);
+
+    return pngBytes!.buffer.asUint8List();
+  }
+
   Future recognize({required List<Offset?> points}) async {
     final picture = _pointsToPicture(points: points);
     Uint8List bytes = await _imageToByteListUint8(
