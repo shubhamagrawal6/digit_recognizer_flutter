@@ -72,7 +72,7 @@ class PredictionWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            for (var i = 6; i < 10; i++)
+            for (var i = 5; i < 10; i++)
               _numberWidget(num: i, prediction: styles![i]),
           ],
         ),

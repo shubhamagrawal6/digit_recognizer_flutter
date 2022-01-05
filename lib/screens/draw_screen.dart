@@ -15,7 +15,7 @@ class DrawScreen extends StatefulWidget {
 class _DrawScreenState extends State<DrawScreen> {
   final _recognizer = Recognizer();
   final List<Offset?> _points = [];
-  var _prediction = [];
+  List<Prediction> _prediction = [];
   bool initialize = false;
 
   @override
@@ -65,7 +65,7 @@ class _DrawScreenState extends State<DrawScreen> {
             _drawCanvasWidget(),
             SizedBox(height: 10),
             PredictionWidget(
-              predictions: _prediction as List<Prediction>,
+              predictions: _prediction,
             ),
           ],
         ),
